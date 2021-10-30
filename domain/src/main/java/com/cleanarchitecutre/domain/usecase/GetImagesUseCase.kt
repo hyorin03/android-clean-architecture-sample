@@ -5,6 +5,6 @@ import com.cleanarchitecutre.domain.repository.ImageRepository
 
 class GetImagesUseCase(private val repository: ImageRepository) {
     suspend fun invoke(): List<ImageEntity> {
-        return repository.getImages()
+        return repository.fetchImages()
     }
 }

@@ -6,7 +6,7 @@ import com.cleanarchitecutre.domain.entity.ImageEntity
 import com.cleanarchitecutre.domain.repository.ImageRepository
 
 class ImageRepositoryImpl : ImageRepository {
-    override suspend fun getImages(): List<ImageEntity> {
+    override suspend fun fetchImages(): List<ImageEntity> {
         return ImagesRemoteDataSourceImpl().fetchImages().map { image ->
             ImageMapper.mapperFromRemote(image)
         }
