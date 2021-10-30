@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.cleanarchitecutre.domain.entity.ImageEntity
 import com.cleanarchitecutre.sample.databinding.ViewHolderImageBinding
 
@@ -12,7 +13,12 @@ class ImageAdapter : ListAdapter<ImageEntity, ImageAdapter.ImageViewHolder>(Imag
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(imageEntity: ImageEntity) {
-            binding.text.text = imageEntity.downloadUrl
+            with(binding) {
+                Glide.with(root)
+                    .load(imageEntity.downloadUrl)
+                    .centerCrop()
+                    .into(image)
+            }
         }
 
     }
