@@ -1,4 +1,4 @@
-package com.cleanarchitecutre.sample.viewmodel
+package com.cleanarchitecutre.sample.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
